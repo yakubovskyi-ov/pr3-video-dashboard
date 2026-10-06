@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Курс «Основи CSS Grid» — відеоурок</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <header class="header">
+    <a class="logo" href="#" aria-label="Школа «Кодовий потік» — на головну">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="1" y="1" width="32" height="32" rx="8" fill="#ff6b4a"/>
+        <path d="M13 9l12 8-12 8z" fill="#fff"/>
+      </svg>
+      <span>Кодовий потік</span>
+    </a>
+    <form role="search" class="search" onsubmit="return false">
+      <label class="sr-only" for="q">Пошук уроків</label>
+      <input id="q" type="search" placeholder="Пошук уроків">
+    </form>
+  </header>
+
+  <aside class="sidebar">
+    <nav aria-label="Уроки курсу">
+      <h2>Уроки курсу</h2>
+      <ol>
+        <li><a href="#">Що таке Grid</a></li>
+        <li><a href="#" aria-current="page">Лінії та області</a></li>
+        <li><a href="#">Одиниця fr</a></li>
+        <li><a href="#">Адаптивність</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <section aria-labelledby="title">
+      <video controls preload="metadata" poster="img/thumbnail.jpg" width="640" height="360">
+        <source src="video/content.webm" type="video/webm">
+        <source src="video/content.mp4" type="video/mp4">
+        Ваш браузер не підтримує елемент video.
+      </video>
+      <h1 id="title">Урок 2. Лінії та області в CSS Grid</h1>
+      <p class="meta"><span class="live" aria-hidden="true"></span>Новий урок · 12 480 переглядів</p>
+
+      <div class="actions" role="group" aria-label="Дії з відео">
+        <button class="act like" aria-pressed="false" aria-label="Подобається">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3 5 6.5 5c2 0 3.7 1.2 5.5 3.2C13.8 6.2 15.5 5 17.500 5 21 5 22.8 8.6 21.500 11.800 19.500 16.400 12 21 12 21z"/></svg>
+          <span>Лайк</span>
+        </button>
+        <button class="act save" aria-pressed="false" aria-label="Зберегти">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+          <span>Зберегти</span>
+        </button>
+        <button class="act share" aria-label="Поділитися">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 12v8h16v-8M12 3v13M7 8l5-5 5 5" fill="none"/></svg>
+          <span>Поділитися</span>
+        </button>
+      </div>
+    </section>
+
+    <section aria-labelledby="next" class="related">
+      <h2 id="next">Далі за курсом</h2>
+      <ul>
+        <li><a href="#">
+          <span class="thumb" style="--c:#2a9d8f">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12l9-6z"/></svg>
+            <img src="img/thumb1-320.webp" srcset="img/thumb1-320.webp 320w, img/thumb1-640.webp 640w" sizes="200px" width="320" height="180" loading="lazy" alt="Прев'ю уроку «Одиниця fr»">
+          </span>
+          <span class="title">Одиниця fr</span>
+        </a></li>
+        <li><a href="#">
+          <span class="thumb" style="--c:#e9c46a">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12l9-6z"/></svg>
+            <img src="img/thumb2-320.webp" srcset="img/thumb2-320.webp 320w, img/thumb2-640.webp 640w" sizes="200px" width="320" height="180" loading="lazy" alt="Прев'ю уроку «Адаптивність»">
+          </span>
+          <span class="title">Адаптивність</span>
+        </a></li>
+        <li><a href="#">
+          <span class="thumb" style="--c:#e76f51">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12l9-6z"/></svg>
+            <img src="img/thumb3-320.webp" srcset="img/thumb3-320.webp 320w, img/thumb3-640.webp 640w" sizes="200px" width="320" height="180" loading="lazy" alt="Прев'ю уроку «Анімації»">
+          </span>
+          <span class="title">Анімації</span>
+        </a></li>
+        <li><a href="#">
+          <span class="thumb" style="--c:#6a5acd">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12l9-6z"/></svg>
+            <img src="img/thumb4-320.webp" srcset="img/thumb4-320.webp 320w, img/thumb4-640.webp 640w" sizes="200px" width="320" height="180" loading="lazy" alt="Прев'ю уроку «Таблиці»">
+          </span>
+          <span class="title">Таблиці</span>
+        </a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer"><p>© 2026 Кодовий потік. Навчальна робота №3.</p></footer>
+</div>
+<script>
+document.querySelectorAll('.like,.save').forEach(b=>b.addEventListener('click',()=>{
+  const on=b.getAttribute('aria-pressed')==='true';
+  b.setAttribute('aria-pressed',String(!on));
+}));
+</script>
+</body>
+</html>
